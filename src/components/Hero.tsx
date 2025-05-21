@@ -103,9 +103,15 @@ const Hero = () => {
             <a href="#projects" className="button-primary">
               View Projects
             </a>
-            <a href="/resume_apc.pdf" className="button-secondary" download>
-              Download Resume
-            </a>
+            <a
+  href="https://drive.google.com/file/d/1lvd-fvu6pxtGMidWEYqdy9o3H2axngyh/view?usp=sharing"
+  className="block py-2 text-primary-500 font-medium hover:text-primary-600 transition-colors"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Resume
+</a>
+
           </motion.div>
         </motion.div>
       </div>

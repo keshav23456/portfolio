@@ -50,7 +50,7 @@ const Footer = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="/resume_apc.pdf"
+              href="https://drive.google.com/file/d/1lvd-fvu6pxtGMidWEYqdy9o3H2axngyh/view?usp=sharing"
               download
               className="px-4 py-2 rounded-lg border border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
             >

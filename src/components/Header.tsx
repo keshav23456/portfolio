@@ -8,17 +8,14 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(window.scrollY > 10);
     };
 
     document.addEventListener('scroll', handleScroll);
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled]);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -41,6 +38,7 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <a 
             href="#" 
             className="flex items-center space-x-2 text-lg font-bold text-gray-800 hover:text-primary-500 transition-colors"
@@ -50,7 +48,7 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -61,21 +59,24 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="/resume_apc.pdf"
+              href="https://drive.google.com/file/d/1lvd-fvu6pxtGMidWEYqdy9o3H2axngyh/view?usp=sharing"
               className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Resume
             </a>
-          </nav>
+          </div>
 
-          {/* Mobile Toggle Button */}
-          <button
-            className="md:hidden text-gray-700 hover:text-primary-500 focus:outline-none"
-            onClick={toggleMenu}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Toggle Button (Moved outside) */}
+          <div className="md:hidden">
+            <button
+              className="text-gray-700 hover:text-primary-500 focus:outline-none"
+              onClick={toggleMenu}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -100,9 +101,10 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="/resume_apc.pdf"
+              href="https://drive.google.com/file/d/1lvd-fvu6pxtGMidWEYqdy9o3H2axngyh/view?usp=sharing"
               className="block py-2 text-primary-500 font-medium hover:text-primary-600 transition-colors"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
             >
               Resume
